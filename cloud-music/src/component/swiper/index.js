@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper';
+import { Autoplay, Pagination } from 'swiper';
 import 'swiper/css';
-import './index.scss'
+import 'swiper/css/pagination';
+import './index.scss';
 
 function MySwiper() {
     return (
         <Swiper
             loop
-            modules={[Autoplay]}
+            modules={[Autoplay, Pagination]}
             autoplay
+            pagination
         >
             <SwiperSlide>
                 <div>1</div>
