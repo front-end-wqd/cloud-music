@@ -1,0 +1,18 @@
+@import '../../var';
+
+.swiper-slide {
+    height: 160px;
+    box-sizing: border-box;
+    display: flex;
+    margin-top: 1em;
+    div {
+        margin: auto;
+        width: calc(100vw - 2 * 1em);
+        height: 100%;
+        background-color: $color-1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 40px;
+    }
+}

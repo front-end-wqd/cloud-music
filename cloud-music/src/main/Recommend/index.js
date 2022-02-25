@@ -1,8 +1,11 @@
 import React from 'react';
+import Swiper from '../../component/swiper/index';
 
 function Recommend() {
     return (
-        <div>Recommend</div>
+        <div>
+            <Swiper></Swiper>
+        </div>
     );
 }
 
