@@ -1,6 +1,7 @@
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import BScroll from 'bScroll-scroll';
+import BScroll from 'better-scroll';
+import './index.scss';
 
 const Scroll = forwardRef((props, ref) => {
     const [bScroll, setBScroll] = useState();
@@ -29,6 +30,7 @@ const Scroll = forwardRef((props, ref) => {
                 top: bounceTop,
                 bottom: bounceBottom,
             },
+            mouseWheel: true
         });
         setBScroll(scroll);
         return () => {
@@ -78,6 +80,27 @@ const Scroll = forwardRef((props, ref) => {
             }
         }
     }, [bScroll, pullDown]);
+
+    // 对外暴露方法
+    useImperativeHandle(ref, () => ({
+        refresh() {
+            if (bScroll) {
+                bScroll.refresh();
+                bScroll.scrollTo(0, 0);
+            }
+        },
+        getBScroll() {
+            if (bScroll) {
+                return bScroll;
+            }
+        }
+    }));
+
+    return (
+        <div className='scroll-parent' ref={scrollRef}>
+            {props.children}
+        </div>
+    );
 });
 
 Scroll.defaultProps = {

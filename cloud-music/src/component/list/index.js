@@ -14,8 +14,10 @@ function RecommendList(props) {
                 {
                     props.list.map((item, index) =>
                         <div className='recommend-item' key={index}>
-                            <img alt='' src={item.url} />
-                            <div>
+                            <div className='img-box'>
+                                <img alt='' src={item.url} />
+                            </div>
+                            <div className='message'>
                                 <span className='name'>{item.name}</span>
                                 <span>
                                     <FontAwesomeIcon icon={faHeadphonesSimple} />

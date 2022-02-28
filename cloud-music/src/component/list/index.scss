@@ -3,8 +3,9 @@
 .recommend {
     .title {
         margin: 1em;
-        padding: .5em 1.5em .5em 1em;
+        padding: .5em 1em;
         color: $color-2;
+        width: calc((100vw - 1em * 3) / 2);
         background: linear-gradient(to right, $color-1, transparent);
         display: inline-block;
         border-radius: .5em;
@@ -16,14 +17,20 @@
     }
     &-item {
         margin: 0 0 1em 1em;
-        width: calc((100% - 1em * 3) / 2);
+        width: calc((100vw - 1em * 3) / 2);
         border-radius: 1em;
         overflow: hidden;
-        img {
+        /* 需要有初始高度滚动才会生效 */
+        .img-box {
             width: 100%;
-            display: block;
+            height: calc((100vw - 1em * 3) / 2);
+            background: $color-light;
+            img {
+                width: 100%;
+                display: block;
+            }
         }
-        div {
+        .message {
             display: flex;
             align-items: center;
             justify-content: space-between;
