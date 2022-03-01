@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import BScroll from 'better-scroll';
 import './index.scss';
@@ -60,11 +60,12 @@ const Scroll = forwardRef((props, ref) => {
     // 判断上拉
     useEffect(() => {
         if (bScroll && pullUp) {
-            bScroll.on('up', () => {
+            bScroll.on('scrollEnd', () => {
+                console.log(bScroll);
                 // todo
             });
             return () => {
-                bScroll.off('up');
+                bScroll.off('scrollEnd');
             }
         }
     }, [bScroll, pullUp]);
@@ -72,11 +73,12 @@ const Scroll = forwardRef((props, ref) => {
     // 判断下拉
     useEffect(() => {
         if (bScroll && pullDown) {
-            bScroll.on('down', () => {
+            bScroll.on('touchEnd', () => {
+                console.log(bScroll);
                 // todo
             });
             return () => {
-                bScroll.off('down');
+                bScroll.off('touchEnd');
             }
         }
     }, [bScroll, pullDown]);

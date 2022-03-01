@@ -24,6 +24,16 @@ function Recommend() {
                             },
                             {
                                 name: "推荐歌单3",
+                                count: 500,
+                                url: "https://i.postimg.cc/MXkKpfx6/Wechat-IMG633.jpg"
+                            },
+                            {
+                                name: "推荐歌单4",
+                                count: 25000,
+                                url: "https://i.postimg.cc/MXkKpfx6/Wechat-IMG633.jpg"
+                            },
+                            {
+                                name: "推荐歌单5",
                                 count: 200000,
                                 url: "https://i.postimg.cc/MXkKpfx6/Wechat-IMG633.jpg"
                             },
