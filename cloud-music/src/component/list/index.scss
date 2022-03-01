@@ -4,8 +4,8 @@
     .title {
         margin: 1em;
         padding: .5em 1em;
-        color: $color-2;
-        width: calc((100vw - 1em * 3) / 2);
+        color: white;
+        width: calc((100vw - 1em * 2));
         background: linear-gradient(to right, $color-1, transparent);
         display: inline-block;
         border-radius: .5em;
@@ -20,6 +20,8 @@
         width: calc((100vw - 1em * 3) / 2);
         border-radius: 1em;
         overflow: hidden;
+        position: relative;
+        font-size: .875em;
         /* 需要有初始高度滚动才会生效 */
         .img-box {
             width: 100%;
@@ -30,16 +32,22 @@
                 display: block;
             }
         }
+        // todo 文字及背景优化
         .message {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             padding: .25em .5em;
             background: linear-gradient(to right, $color-3, $color-4);
             color: white;
-            svg {
-                margin-right: 4px;
-            }
+        }
+        .count {
+            position: absolute;
+            top: .5em;
+            right: .5em;
+            padding: .125em .5em;
+            border-radius: 1em;
+            color: white;
+            background-color: rgba(255,255,255,.25);
+            display: flex;
+            align-items: center;
         }
     }
 }

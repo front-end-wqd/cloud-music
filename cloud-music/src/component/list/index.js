@@ -1,28 +1,25 @@
 import React from 'react';
 import './index.scss';
 import {formatCount} from '../../api/common';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faHeadphonesSimple,
-} from '@fortawesome/free-solid-svg-icons';
 
 function RecommendList(props) {
+    const {recommendList} = props;
+
     return (
         <div className='recommend'>
             <div className='title'>推荐歌单</div>
             <div className='recommend-list'>
                 {
-                    props.list.map((item, index) =>
-                        <div className='recommend-item' key={index}>
+                    recommendList.map((item) =>
+                        <div className='recommend-item' key={item.id}>
                             <div className='img-box'>
-                                <img alt='' src={item.url} />
+                                <img alt='' src={item.picUrl} />
                             </div>
                             <div className='message'>
                                 <span className='name'>{item.name}</span>
-                                <span>
-                                    <FontAwesomeIcon icon={faHeadphonesSimple} />
-                                    {formatCount(item.count)}
-                                </span>
+                            </div>
+                            <div className='count'>
+                                {formatCount(item.playCount)}
                             </div>
                         </div>
                     )

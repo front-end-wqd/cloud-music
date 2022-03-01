@@ -8,7 +8,7 @@
     justify-content: space-between;
 }
 .nav {
-    background-color: $color-2;
+    background: linear-gradient(to right, $color-3, $color-4, $color-3);
     padding: .5em;
     display: flex;
     justify-content: space-evenly;
