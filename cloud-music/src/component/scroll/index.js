@@ -13,8 +13,8 @@ const Scroll = forwardRef((props, ref) => {
         onScroll,
         pullUp,
         pullDown,
-        pullUpLoading,
-        pullDownLoadinng,
+        // pullUpLoading,
+        // pullDownLoadinng,
         bounceTop,
         bounceBottom,
     } = props;
@@ -36,6 +36,7 @@ const Scroll = forwardRef((props, ref) => {
         return () => {
             setBScroll(null);
         }
+        // eslint-disable-next-line
     }, []);
 
     // 处理刷新

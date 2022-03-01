@@ -16,9 +16,11 @@ function MySwiper(props) {
             pagination
         >
             {
-                swiperItem.map((item, index) =>
-                    <SwiperSlide key={index}>
-                        <div>{item}</div>
+                swiperItem.map((item) =>
+                    <SwiperSlide key={item.targetId}>
+                        <div>
+                            <img alt='' src={item.imageUrl} />
+                        </div>
                     </SwiperSlide>
                 )
             }
