@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { renderRoutes } from 'react-router-config';
 import './index.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,8 +11,13 @@ import { NavLink } from 'react-router-dom';
 function Home(props) {
     const { route } = props;
 
+    useEffect(() => {
+        const header = document.querySelector('#header');
+        window.headerOffsetHeight = header.offsetHeight;
+    }, []);
+
     return (
-        <div>
+        <div id='header'>
             <div className='header'>
                 <span>
                     <FontAwesomeIcon icon={faBars} />

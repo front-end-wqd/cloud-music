@@ -20,7 +20,7 @@ function Recommend(props) {
     const recommendListJS = recommendList ? recommendList.toJS() : [];
 
     return (
-        <div className='scroll-box'>
+        <div className='scroll-box' style={{top: window.headerOffsetHeight}}>
             <Scroll>
                 <div>
                     <Swiper bannerList={bannerListJS}></Swiper>
