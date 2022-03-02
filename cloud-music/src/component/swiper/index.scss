@@ -3,13 +3,21 @@
 .swiper-slide {
     box-sizing: border-box;
     display: flex;
-    margin-top: 1em;
+    position: relative;
+    .filter {
+        width: 100%;
+        filter: opacity(37.5%);
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
     div {
         margin: auto;
-        border-radius: 25px;
+        border-radius: 1em;
         overflow: hidden;
+        position: absolute;
         img {
-            width: calc(100vw - 2 * 1em);
+            width: calc(100vw - 2 * 2em);
             display: block;
         }
     }

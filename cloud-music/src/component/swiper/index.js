@@ -18,6 +18,7 @@ function MySwiper(props) {
             {
                 bannerList.map((item) =>
                     <SwiperSlide key={item.targetId}>
+                        <img className='filter' alt='' src={item.imageUrl} />
                         <div>
                             <img alt='' src={item.imageUrl} />
                         </div>
