@@ -5,6 +5,8 @@ import * as actionType from './store/createAction';
 import RecommendList from '../../component/list/index';
 import Scroll from '../../component/scroll/index';
 import './index.scss';
+import { forceCheck } from 'react-lazyload';
+import Loading from '../../component/loading/index';
 
 function Recommend(props) {
     const { bannerList, recommendList } = props;
@@ -21,7 +23,8 @@ function Recommend(props) {
 
     return (
         <div className='scroll-box' style={{top: window.headerOffsetHeight}}>
-            <Scroll>
+            <Loading />
+            <Scroll onScroll={forceCheck}>
                 <div>
                     <Swiper bannerList={bannerListJS}></Swiper>
                     <RecommendList recommendList={recommendListJS}></RecommendList>

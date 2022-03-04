@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.scss';
 import {formatCount} from '../../api/common';
+import Lazyload from 'react-lazyload';
 
 function RecommendList(props) {
     const {recommendList} = props;
@@ -13,7 +14,9 @@ function RecommendList(props) {
                     recommendList.map((item) =>
                         <div className='recommend-item' key={item.id}>
                             <div className='img-box'>
-                                <img alt='' src={item.picUrl} />
+                                <Lazyload>
+                                    <img alt='' src={item.picUrl} />
+                                </Lazyload>
                             </div>
                             <div className='message'>
                                 <span className='name'>{item.name}</span>
